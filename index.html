@@ -359,10 +359,149 @@
             align-items: center;
             gap: 0.5rem;
             transition: var(--transition);
+            cursor: pointer;
         }
 
         .portfolio-link:hover {
             gap: 0.8rem;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            background-color: var(--accent-gray);
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .close-modal:hover {
+            background-color: var(--light-gray);
+            color: var(--accent-color);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .modal-tech {
+            margin-top: 2rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background-color: var(--light-gray);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .modal-footer {
+            padding: 1.5rem 2rem;
+            border-top: 1px solid var(--light-gray);
+            display: flex;
+            justify-content: center;
+        }
+
+        .modal-btn {
+            padding: 0.8rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            min-width: 200px;
+            font-size: 1rem;
+            background-color: var(--accent-color);
+            color: white;
+            border: 2px solid var(--accent-color);
+        }
+
+        .modal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Contact Section */
@@ -515,6 +654,20 @@
             .portfolio-info p {
                 font-size: 1rem;
             }
+
+            .modal-content {
+                margin: 1rem;
+            }
+
+            .modal-header, .modal-body, .modal-footer {
+                padding: 1rem 1.5rem;
+            }
+            
+            .modal-btn {
+                min-width: auto;
+                width: 100%;
+                padding: 0.8rem 1.5rem;
+            }
         }
     </style>
 </head>
@@ -602,7 +755,7 @@
                 <div class="portfolio-info">
                     <h3>Корпоративный портал</h3>
                     <p>Многофункциональная платформа для управления бизнес-процессами крупной компании. Включает модули для управления проектами, документооборотом и аналитикой.</p>
-                    <a href="#" class="portfolio-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    <span class="portfolio-link" data-modal="modal1">Подробнее <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
             <div class="portfolio-item">
@@ -612,7 +765,7 @@
                 <div class="portfolio-info">
                     <h3>Интернет-магазин</h3>
                     <p>Полнофункциональная платформа для электронной коммерции с интегрированной системой аналитики, управления заказами и CRM. Поддержка множества платежных систем.</p>
-                    <a href="#" class="portfolio-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    <span class="portfolio-link" data-modal="modal2">Подробнее <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
             <div class="portfolio-item">
@@ -622,7 +775,7 @@
                 <div class="portfolio-info">
                     <h3>Мобильное приложение</h3>
                     <p>Кроссплатформенное приложение для iOS и Android с современным UI/UX дизайном. Интеграция с социальными сетями, push-уведомлениями и системой аналитики пользователей.</p>
-                    <a href="#" class="portfolio-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    <span class="portfolio-link" data-modal="modal3">Подробнее <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
@@ -653,9 +806,184 @@
                 <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
             </div>
-            <p class="copyright">© 2025 GetCode. Все права защищены.</p>
+            <p class="copyright">© 2023 GetCode. Все права защищены.</p>
         </div>
     </footer>
+
+    <!-- Modal Windows -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Корпоративный портал</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Разработанный нами корпоративный портал представляет собой комплексное решение для автоматизации бизнес-процессов крупной компании с филиалами по всей стране.</p>
+                
+                <div class="modal-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Управление проектами</h4>
+                            <p>Полный цикл управления проектами от постановки задач до контроля выполнения</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Документооборот</h4>
+                            <p>Электронный документооборот с системой согласования и версионностью</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Аналитика и отчетность</h4>
+                            <p>Мощная система аналитики с дашбордами и автоматической генерацией отчетов</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Коммуникации</h4>
+                            <p>Встроенная система мессенджера и видеоконференций для сотрудников</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-tech">
+                    <h3>Использованные технологии</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="modal-btn order-project">Заказать похожий проект</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Интернет-магазин</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Современный интернет-магазин с полным циклом продаж, интегрированной CRM и системой аналитики для розничной сети.</p>
+                
+                <div class="modal-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Каталог товаров</h4>
+                            <p>Умный каталог с фильтрами, поиском и рекомендательной системой</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Корзина и оплата</h4>
+                            <p>Процесс оформления заказа с поддержкой </p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>CRM система</h4>
+                            <p>Полнофункциональная CRM для управления клиентами и заказами</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Аналитика продаж</h4>
+                            <p>Детальная аналитика продаж, трафика и поведения пользователей</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-tech">
+                    <h3>Использованные технологии</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Stripe API</span>
+                        <span class="tech-tag">Google Analytics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="modal-btn order-project">Заказать похожий проект</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Мобильное приложение</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Кроссплатформенное мобильное приложение для службы доставки еды с современным UI/UX и высокой производительностью.</p>
+                
+                <div class="modal-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Заказ еды</h4>
+                            <p>Интуитивный интерфейс для выбора ресторана и оформления заказа</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Отслеживание доставки</h4>
+                            <p>Реальное время отслеживание курьера на карте с ETA</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Push-уведомления</h4>
+                            <p>Умные уведомления о статусе заказа и персональные предложения</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Система лояльности</h4>
+                            <p>Программа лояльности с бонусами и персональными скидками</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-tech">
+                    <h3>Использованные технологии</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Google Maps API</span>
+                        <span class="tech-tag">OneSignal</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="modal-btn order-project">Заказать похожий проект</a>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Плавная прокрутка для навигационных ссылок
@@ -689,6 +1017,53 @@
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
             observer.observe(el);
+        });
+
+        // Modal functionality
+        document.querySelectorAll('.portfolio-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        document.querySelectorAll('.close-modal').forEach(button => {
+            button.addEventListener('click', function() {
+                const modal = this.closest('.modal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Закрытие модального окна при нажатии на кнопку "Заказать похожий проект"
+        document.querySelectorAll('.order-project').forEach(button => {
+            button.addEventListener('click', function() {
+                const modal = this.closest('.modal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
         });
     </script>
 </body>
