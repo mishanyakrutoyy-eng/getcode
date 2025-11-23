@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GetCode - Профессиональная разработка сайтов</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcAAA4AATyMsIoAAAAASUVORK5CYII=">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -219,6 +220,42 @@
 
         .service-card p {
             color: var(--text-muted);
+        }
+
+        .more-services {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: var(--accent-gray);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .more-services h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .more-services-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .more-service-item {
+            background-color: var(--light-gray);
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .more-service-item:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.05);
         }
 
         /* About Section */
@@ -668,6 +705,11 @@
                 width: 100%;
                 padding: 0.8rem 1.5rem;
             }
+
+            .more-services-list {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -707,14 +749,49 @@
                 <p>Создаем современные и отзывчивые веб-сайты с использованием передовых технологий.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-mobile-alt service-icon"></i>
-                <h3>Мобильные приложения</h3>
-                <p>Разрабатываем кроссплатформенные мобильные приложения для iOS и Android.</p>
-            </div>
-            <div class="service-card">
                 <i class="fas fa-shopping-cart service-icon"></i>
                 <h3>Интернет-магазины</h3>
                 <p>Создаем полнофункциональные интернет-магазины с интегрированными платежными системами.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-landmark service-icon"></i>
+                <h3>Корпоративные сайты</h3>
+                <p>Разрабатываем представительские сайты для компаний с системой управления контентом.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-rocket service-icon"></i>
+                <h3>Лендинги</h3>
+                <p>Создаем эффективные посадочные страницы для продвижения продуктов и услуг.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-blog service-icon"></i>
+                <h3>Блоги и новостные порталы</h3>
+                <p>Разрабатываем платформы для публикации контента с удобной системой управления.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-graduation-cap service-icon"></i>
+                <h3>Образовательные платформы</h3>
+                <p>Создаем системы для онлайн-обучения с видеоуроками, тестами и прогрессом студентов.</p>
+            </div>
+        </div>
+
+        <!-- Многое другое -->
+        <div class="more-services">
+            <h3>И многое другое!</h3>
+            <p>Мы разрабатываем различные типы веб-решений под любые задачи вашего бизнеса</p>
+            <div class="more-services-list">
+                <span class="more-service-item">Порталы для госучреждений</span>
+                <span class="more-service-item">Социальные сети</span>
+                <span class="more-service-item">CRM системы</span>
+                <span class="more-service-item">ERP системы</span>
+                <span class="more-service-item">Маркетплейсы</span>
+                <span class="more-service-item">Сервисы бронирования</span>
+                <span class="more-service-item">Агрегаторы услуг</span>
+                <span class="more-service-item">Дашборды аналитики</span>
+                <span class="more-service-item">API интеграции</span>
+                <span class="more-service-item">Чат-боты</span>
+                <span class="more-service-item">Платежные системы</span>
+                <span class="more-service-item">Системы голосования</span>
             </div>
         </div>
     </section>
@@ -735,6 +812,10 @@
                     <span class="skill">PHP</span>
                     <span class="skill">Python</span>
                     <span class="skill">UI/UX Design</span>
+                    <span class="skill">WordPress</span>
+                    <span class="skill">Laravel</span>
+                    <span class="skill">MySQL</span>
+                    <span class="skill">MongoDB</span>
                 </div>
             </div>
             <div class="about-image">
@@ -770,12 +851,42 @@
             </div>
             <div class="portfolio-item">
                 <div class="portfolio-img">
-                    <i class="fas fa-mobile-alt"></i>
+                    <i class="fas fa-landmark"></i>
                 </div>
                 <div class="portfolio-info">
-                    <h3>Мобильное приложение</h3>
-                    <p>Кроссплатформенное приложение для iOS и Android с современным UI/UX дизайном. Интеграция с социальными сетями, push-уведомлениями и системой аналитики пользователей.</p>
+                    <h3>Корпоративный сайт</h3>
+                    <p>Современный представительский сайт для крупной компании с системой управления контентом, блогом и интеграцией с социальными сетями.</p>
                     <span class="portfolio-link" data-modal="modal3">Подробнее <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Лендинг для стартапа</h3>
+                    <p>Высококонверсионная посадочная страница для IT-стартапа с анимированными элементами и интеграцией с CRM системой для сбора лидов.</p>
+                    <span class="portfolio-link" data-modal="modal4">Подробнее <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="portfolio-info">
+                    <h3>Образовательная платформа</h3>
+                    <p>Комплексная система для онлайн-обучения с видеоуроками, интерактивными тестами, системой прогресса и сертификацией студентов.</p>
+                    <span class="portfolio-link" data-modal="modal5">Подробнее <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-img">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="portfolio-info">
+                    <h3>И многое другое!</h3>
+                    <p>Мы реализовали десятки успешных проектов различных типов и сложности. Расскажите нам о своей задаче - мы найдем оптимальное решение!</p>
+                    <span class="portfolio-link" data-modal="modal6">Узнать больше <i class="fas fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
@@ -842,13 +953,6 @@
                             <p>Мощная система аналитики с дашбордами и автоматической генерацией отчетов</p>
                         </div>
                     </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <div>
-                            <h4>Коммуникации</h4>
-                            <p>Встроенная система мессенджера и видеоконференций для сотрудников</p>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="modal-tech">
@@ -859,7 +963,6 @@
                         <span class="tech-tag">MongoDB</span>
                         <span class="tech-tag">Redis</span>
                         <span class="tech-tag">Docker</span>
-                        <span class="tech-tag">AWS</span>
                     </div>
                 </div>
             </div>
@@ -890,7 +993,7 @@
                         <i class="fas fa-check-circle feature-icon"></i>
                         <div>
                             <h4>Корзина и оплата</h4>
-                            <p>Процесс оформления заказа с поддержкой </p>
+                            <p>Процесс оформления заказа с поддержкой多种支付系统 и доставки</p>
                         </div>
                     </div>
                     <div class="feature-item">
@@ -898,13 +1001,6 @@
                         <div>
                             <h4>CRM система</h4>
                             <p>Полнофункциональная CRM для управления клиентами и заказами</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <div>
-                            <h4>Аналитика продаж</h4>
-                            <p>Детальная аналитика продаж, трафика и поведения пользователей</p>
                         </div>
                     </div>
                 </div>
@@ -915,9 +1011,7 @@
                         <span class="tech-tag">Vue.js</span>
                         <span class="tech-tag">Laravel</span>
                         <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Redis</span>
                         <span class="tech-tag">Stripe API</span>
-                        <span class="tech-tag">Google Analytics</span>
                     </div>
                 </div>
             </div>
@@ -930,39 +1024,32 @@
     <div id="modal3" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Мобильное приложение</h2>
+                <h2>Корпоративный сайт</h2>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
-                <p>Кроссплатформенное мобильное приложение для службы доставки еды с современным UI/UX и высокой производительностью.</p>
+                <p>Современный представительский сайт для крупной компании с адаптивным дизайном, системой управления контентом и интеграцией с CRM.</p>
                 
                 <div class="modal-features">
                     <div class="feature-item">
                         <i class="fas fa-check-circle feature-icon"></i>
                         <div>
-                            <h4>Заказ еды</h4>
-                            <p>Интуитивный интерфейс для выбора ресторана и оформления заказа</p>
+                            <h4>Адаптивный дизайн</h4>
+                            <p>Идеальное отображение на всех устройствах - от смартфонов до десктопов</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle feature-icon"></i>
                         <div>
-                            <h4>Отслеживание доставки</h4>
-                            <p>Реальное время отслеживание курьера на карте с ETA</p>
+                            <h4>CMS система</h4>
+                            <p>Удобная система управления контентом для самостоятельного обновления информации</p>
                         </div>
                     </div>
                     <div class="feature-item">
                         <i class="fas fa-check-circle feature-icon"></i>
                         <div>
-                            <h4>Push-уведомления</h4>
-                            <p>Умные уведомления о статусе заказа и персональные предложения</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle feature-icon"></i>
-                        <div>
-                            <h4>Система лояльности</h4>
-                            <p>Программа лояльности с бонусами и персональными скидками</p>
+                            <h4>Блог и новости</h4>
+                            <p>Встроенная система публикации новостей и статей с категориями и тегами</p>
                         </div>
                     </div>
                 </div>
@@ -970,17 +1057,166 @@
                 <div class="modal-tech">
                     <h3>Использованные технологии</h3>
                     <div class="tech-tags">
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Firebase</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Google Maps API</span>
-                        <span class="tech-tag">OneSignal</span>
+                        <span class="tech-tag">HTML5/CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">WordPress</span>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <a href="#contact" class="modal-btn order-project">Заказать похожий проект</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Лендинг для стартапа</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Высококонверсионная посадочная страница для IT-стартапа с анимированными элементами и интеграцией с CRM системой для сбора лидов.</p>
+                
+                <div class="modal-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Анимации и интерактив</h4>
+                            <p>Плавные анимации и интерактивные элементы для вовлечения пользователей</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Формы захвата лидов</h4>
+                            <p>Оптимизированные формы для сбора контактных данных потенциальных клиентов</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Аналитика поведения</h4>
+                            <p>Система отслеживания поведения пользователей и анализа конверсии</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-tech">
+                    <h3>Использованные технологии</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML5/CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">GSAP</span>
+                        <span class="tech-tag">Google Analytics</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="modal-btn order-project">Заказать похожий проект</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Образовательная платформа</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Комплексная система для онлайн-обучения с видеоуроками, интерактивными тестами, системой прогресса и сертификацией студентов.</p>
+                
+                <div class="modal-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Видеоплатформа</h4>
+                            <p>Стриминг видеоуроков с поддержкой разных качеств и системой DRM</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Интерактивные тесты</h4>
+                            <p>Различные типы вопросов с автоматической проверкой и обратной связью</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Система прогресса</h4>
+                            <p>Отслеживание прогресса обучения, достижений и выдача сертификатов</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-tech">
+                    <h3>Использованные технологии</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">AWS S3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="modal-btn order-project">Заказать похожий проект</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>И многое другое!</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Наша команда имеет богатый опыт в разработке различных типов веб-приложений и систем. Мы готовы взяться за проект любой сложности!</p>
+                
+                <div class="modal-features">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Широкий спектр решений</h4>
+                            <p>От простых лендингов до сложных ERP систем и маркетплейсов</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Индивидуальный подход</h4>
+                            <p>Каждый проект мы разрабатываем с учетом уникальных требований заказчика</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle feature-icon"></i>
+                        <div>
+                            <h4>Полный цикл разработки</h4>
+                            <p>От анализа требований до запуска проекта и технической поддержки</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-tech">
+                    <h3>Наши компетенции</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Frontend разработка</span>
+                        <span class="tech-tag">Backend разработка</span>
+                        <span class="tech-tag">UI/UX дизайн</span>
+                        <span class="tech-tag">Базы данных</span>
+                        <span class="tech-tag">API интеграции</span>
+                        <span class="tech-tag">DevOps</span>
+                        <span class="tech-tag">Тестирование</span>
+                        <span class="tech-tag">Оптимизация</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#contact" class="modal-btn order-project">Обсудить мой проект</a>
             </div>
         </div>
     </div>
@@ -1012,7 +1248,7 @@
         }, observerOptions);
 
         // Наблюдаем за элементами, которые должны появляться при скролле
-        document.querySelectorAll('.service-card, .about-text, .about-image, .portfolio-item, .telegram-contact').forEach(el => {
+        document.querySelectorAll('.service-card, .about-text, .about-image, .portfolio-item, .telegram-contact, .more-services').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
